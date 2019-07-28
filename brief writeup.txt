@@ -1,0 +1,11 @@
+1. I did some Exploratory data analysis (EDA) on the Data (drivers and pings).
+2. The timestamp needed to be converted to date, and as the date variable won't be useful for test dataset because it will have new dates, so I tried to derive few variables out of the date variable.
+3. Variables were day of week, month, date number.
+4. We receive pings after every 15 second, so I assumed every driver which pinged is online for the next 15 seconds. So I assumed each ping was 15 second long.
+5. I then grouped by the driver id and date variable to get the count of pings and then multiplied by 15 /3600 to get the online hours.
+6. We got 3 drivers which had duplicate profiles, we assumed their last row would be the correct one, so we used the last row of them.
+7. We joined ping counts data with the driver data and also joined test data with the driver data to create a final train and test data respectively.
+8. Converted all the categorical variable to numeric by creating columns of the categories and adding 0 if the row doesnt belong to that category otherwise 1.
+9. We observed that there are no/less correlation among the feature variables
+10. Now trained few regression models and using cross validation we selected Linear regression, support vector regression and gradient boosting (LR gave the best results on Cross validation)
+11. Tried all the 3 models on the test data and also tried ensembles , Finalized linear regression as it gave the best results on root mean square error.
