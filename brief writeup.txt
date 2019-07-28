@@ -9,3 +9,30 @@
 9. We observed that there are no/less correlation among the feature variables
 10. Now trained few regression models and using cross validation we selected Linear regression, support vector regression and gradient boosting (LR gave the best results on Cross validation)
 11. Tried all the 3 models on the test data and also tried ensembles , Finalized linear regression as it gave the best results on root mean square error.
+
+CV score for negative mean squared error were:
+
+Linear Regression : mean: -5.138062 , sd: 0.131067
+LASSO Regression: mean: -6.463259 , sd: 0.187020
+Elastic Net Regression: mean: -6.030071 , sd: 0.166924
+KNN Regression: mean: -6.061834 , sd: 0.205751
+CART Regression: mean: -10.353689 , sd: 0.704090
+GBM Regression: mean: -5.209813 , sd: 0.354412
+Random Forest Regression: mean: -7.257589 , sd: 0.480903
+Support vector regression: mean: -5.162834 , sd: 0.202581
+
+
+So, we used Linear regression, GBM and Support vector regression to test on the test data.
+
+
+Final Mean squared errors:
+
+Linear Regression : 12.175311037762143
+GBM : 17.50171338563262
+SVR : 12.784650223364121
+LR+GBM : 12.738536872393366
+LR+SVR : 12.178777340163041
+SVR+GBM : 13.671403968764658
+LR+SVR+GBM : 12.432577564280596
+
+These scores also suggested that linear regression is the best model for this data. We finalised linear regression.
